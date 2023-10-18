@@ -113,7 +113,7 @@ interface BaseCascaderProps<OptionType extends BaseOptionType = DefaultOptionTyp
   placement?: Placement;
   builtinPlacements?: BuildInPlacements;
 
-  /** @deprecated Use `onDropdownVisibleChange` instead */
+  /** @deprecated Use `onDropdownVisibleChange` instead. */
   onPopupVisibleChange?: (open: boolean) => void;
   onDropdownVisibleChange?: (open: boolean) => void;
 
@@ -410,12 +410,12 @@ const Cascader = React.forwardRef<CascaderRef, InternalCascaderProps>((props, re
   const dropdownStyle: React.CSSProperties =
     // Search to match width
     (mergedSearchValue && searchConfig.matchInputWidth) ||
-    // Empty keep the width
-    emptyOptions
+      // Empty keep the width
+      emptyOptions
       ? {}
       : {
-          minWidth: 'auto',
-        };
+        minWidth: 'auto',
+      };
 
   return (
     <CascaderContext.Provider value={cascaderContext}>
